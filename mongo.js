@@ -16,15 +16,6 @@ const noteSchema = new mongoose.Schema({
 });
 const Note = mongoose.model("Note", noteSchema);
 
-const note = new Note({
-  content: "I want to become fullstack developer",
-  important: true,
-});
-
-// note.save().then((result) => {
-//   console.log("Notes saved", result);
-//   mongoose.connection.close();
-// });
 Note.find({}).then((result) => {
   result.forEach((note) => {
     console.log(note);
